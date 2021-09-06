@@ -10,9 +10,9 @@ import insert_data as i
 app = FastAPI(title='Api Base De Données')
 
 # creating a connection to the database
-mysql_url = "mysql"
-mysql_user = 'test'
-mysql_password = 'test_pass'
+mysql_url = "localhost"
+mysql_user = 'root'
+mysql_password = 'admin'
 database_name = 'Football_Transfers'
 
 # create  Football_Transfers table
