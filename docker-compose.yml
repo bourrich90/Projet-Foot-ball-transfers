@@ -21,7 +21,7 @@ services:
       timeout: 30s
       retries: 3
   fastapi:
-    image: apibdd:latest
+    image: bourrich/apibdd:latest
     container_name: fastapi-container
     networks: 
       - my_network_from_compose
