@@ -5,9 +5,9 @@ import pandas as pd
 
 
 # creating a connection to the database
-mysql_url = "mysql"
-mysql_user = 'test'
-mysql_password = 'test_pass'
+mysql_url = "localhost"
+mysql_user = 'root'
+mysql_password = 'admin'
 database_name = 'Football_Transfers'
 
 def insert_data():
