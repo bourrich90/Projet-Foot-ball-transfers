@@ -9,7 +9,7 @@ Le projet contient:
 
 Le jeu de données utilisée dans ce projet est [Football transfers](https://www.kaggle.com/vardan95ghazaryan/top-250-football-transfers-from-2000-to-2018) . Il s'agit des données des 250 plus cher transferts de joueurs de Football entre 2000 et 2008 .Le fichier csv contient les informations suivantes : Name, Position, Age, Team_from, League_from, Team_to, League_to ,Season , Market_value , Transfer_fee
 
-## Choix d’une base de données
+## Choix de la base de données
 
 Le choix d'une bases de données relationnelle , dans notre cas Mysql est justifiée de fait que les données sont structurées et organisées. Une table avec un shéma fixe peut donc contenir les données  Football transfers sans probléme .
 
