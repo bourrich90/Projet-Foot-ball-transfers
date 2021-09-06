@@ -27,17 +27,15 @@ La création de la table Football_Transfers et son chargement avec données est 
 
 Pour lancer l'API, exécutez les commandes suivantes :
 
-* installer Mysql.
+* installer Mysql avec login/pwd : root/admin .
 * Créer la base de données Football_Transfers.Pour ce faire , lancer la commande "create Football_Transfers" dans le terminal de Mysql , ensuite  excécuter 
 "show databases" , vous devez avoir la vue suivante:
 
 ![image](https://user-images.githubusercontent.com/86717947/132197932-007e8c8f-c23f-4a19-a4c0-fe575aa73348.png)
 
-* cd main
-* pip install -r requirements.txt
-* uvicorn main:app
- 
-
+ - cd main
+ - pip install -r requirements.txt
+ - uvicorn main:app
 
 L'API est désormais accessible à l'adresse localhost:8000.
 
@@ -45,3 +43,20 @@ En particulier, vous pouvez accéder à la documentation de l'API à l'adresse [
 
 ![image](https://user-images.githubusercontent.com/86717947/132199758-c45fc4f8-a919-4d50-91e6-3d0fa37da484.png)
 
+#### Docker :
+
+Pour  lancer l'API avec Docker, il faut  démarrer Mysql avec un root/admin comme login/pwd , ensuite  construire l'image Docker définie dans le [Dockerfile](https://github.com/bourrich90/Projet3_DE/blob/main/main/Dockerfile) :
+
+ - cd main
+ - docker build -t apibdd .
+ - docker run -p 8000:8000 --rm apibdd
+
+L'API sera accessible à l'adresse localhost:8000.
+
+#### Docker compose :
+
+Vous pouvez également lancez l'API et les tests directement grâce à [docker-compose](https://github.com/bourrich90/Projet3_DE/blob/main/docker-compose.yml) :
+
+docker-compose up --build
+
+![image](https://user-images.githubusercontent.com/86717947/132201653-f5af3e5d-9715-4ecf-b2d4-d59a06698bab.png)
