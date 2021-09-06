@@ -1,0 +1,43 @@
+version: '2.1'
+services:
+  mysql:
+    image: mysql
+    restart: always
+    container_name: mysql-container
+    volumes:
+      - ./home/ubuntu/project3:/logs
+    networks: 
+      - my_network_from_compose
+    environment:
+      MYSQL_DATABASE: Football_Transfers
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test_pass
+    ports: 
+      - "3306:3306"
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+      interval: 30s
+      timeout: 30s
+      retries: 3
+  fastapi:
+    image: apibdd:latest
+    container_name: fastapi-container
+    networks: 
+      - my_network_from_compose
+    environment:
+      MYSQL_DATABASE: Football_Transfers
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test_pass
+      MYSQL_HOST: mysql
+    volumes:
+      - ./home/ubuntu/project3:/logs
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: on-failure
+    ports: 
+      - "8000:8000"
+networks:
+  my_network_from_compose:
