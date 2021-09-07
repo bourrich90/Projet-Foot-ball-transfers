@@ -35,7 +35,7 @@ Pour lancer l'API, exécutez les commandes suivantes :
 
  - cd main
  - pip install -r requirements.txt
- - uvicorn main:app
+ - python3 main.py
 
 L'API est désormais accessible à l'adresse localhost:8000.
 
